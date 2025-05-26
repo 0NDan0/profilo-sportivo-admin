@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,9 +8,145 @@
   --foreground: #FFFFFF;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
     --foreground: #FFFFFF;
   }
+} */
+
+body {
+  color: var(--foreground);
+  background: black;
+  font-family: 'Circular Regular', serif;
+}
+
+.specific {
+  font-family: "Specific Regular", sans-serif;
+}
+
+.sf {
+  font-family: 'SF Pro', sans-serif;
+  font-weight: 300;
+}
+
+.std {
+  font-family: 'std', sans-serif;
+  font-weight: 300;
+}
+
+.circular {
+  font-family: 'Circular Regular', serif;
+}
+
+@font-face {
+  font-family: "Specific Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Specific Regular"), url("/font/Specific.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Circular Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Circular Medium"), url("/font/circular-medium-std.ttf"), format("ttf");
+}
+
+@font-face {
+  font-family: "Circular Regular";
+  font-style: normal;
+  font-weight: 100 !important;
+  /* Usa un peso più basso per il font più sottile */
+  src: local("Circular Regular"), url("/font/circular-regular-std.ttf"), format("truetype");
+}
+
+@font-face {
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 200 !important;
+  src: local("SF Pro"), url("/font/SF-Pro.dmg") format("dmg");
+}
+
+@font-face {
+  font-family: "std";
+  font-style: normal;
+  font-weight: 200;
+  src: local("std"), url("/font/std.ttf") format("ttf");
+}
+
+.radial-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(13, 13, 13, 0.2) 0%, rgba(13, 13, 13, 0.5) 100%);
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateX(100%);
+    opacity: 0.3;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-scan {
+  animation: scan 3s infinite ease-in-out;
+}
+
+.animate-timer {
+  animation: pulse-glow 0.8s ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: translateY(5px);
+    text-shadow: 0 0 5px #3995f2;
+  }
+
+  100% {
+    transform: translateY(0);
+    text-shadow: 0 0 15px #3995f2;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Nasconde scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
